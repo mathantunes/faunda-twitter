@@ -1,0 +1,30 @@
+{
+  "name": "faunda-twitter",
+  "version": "1.0.0",
+  "description": "FaunaDB usage with Twitter like modelling",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mathantunes/faunda-twitter.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mathantunes/faunda-twitter/issues"
+  },
+  "homepage": "https://github.com/mathantunes/faunda-twitter#readme",
+  "devDependencies": {
+    "tsc": "^2.0.3",
+    "type-graphql": "^1.1.1",
+    "typescript": "^4.4.2"
+  },
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "graphql": "^15.5.2",
+    "graphql-request": "^3.5.0"
+  }
+}
