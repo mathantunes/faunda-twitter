@@ -1,0 +1,34 @@
+type User @collection(name: "users") {
+  id: String!
+  name: String!
+  email: String!
+  address: Address! 
+}
+
+type Tweet @collection(name: "tweets") {
+  user: User!
+  text: String!
+}
+
+input TweetInput {
+  userId: ID!
+  text: String!
+}
+
+type Address @embedded {
+  street: String!
+  city: String!
+  state: String!
+  zipCode: String!
+}
+
+type Query {
+  tweets: [Tweet!]! @index(name: "tweets_by_user")
+  feed: [Tweet!]! @index(name: "feed")
+}
+
+type Mutation {
+  tweet(tweet: TweetInput): Tweet! @resolver(name: "tweet")
+  follow(followerId: ID!, followeeId: ID!): Boolean! @resolver(name: "follow")
+  feed(userId: ID!): [Tweet!]! @resolver(name: "feed")
+}
